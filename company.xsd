@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="name" type="xs:string" />
+<xs:element name="fname" type="xs:string" />
+<xs:element name="lname" type="xs:string" />
+<xs:element name="month" type="xs:positiveInteger" />
+<xs:element name="day" type="xs:positiveInteger" />
+<xs:element name="year" type="xs:positiveInteger" />
+
+<xs:simpleType name="ssnType">
+	<xs:restriction base="xs:string">
+		<xs:pattern value="[0-9]{3}-[0-9]{2}-[0-9]{4}"/>
+	</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="bossType">
+	<xs:sequence />
+	<xs:attribute name="empID" type="xs:positiveInteger" use="required" />
+</xs:complexType>
+
+<xs:complexType name="departmentType">
+	<xs:sequence>
+		<xs:element ref="name" />
+		<xs:element name="boss" type="bossType" />
+	</xs:sequence>
+	<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+</xs:complexType>
+
+<xs:complexType name="departmentsType">
+	<xs:sequence>
+		<xs:element name="department" type="departmentType" maxOccurs="unbounded" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="dobType">
+	<xs:sequence>
+		<xs:element ref="month" />
+		<xs:element ref="day" />
+		<xs:element ref="year" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="employeeType">
+	<xs:sequence>
+		<xs:element ref="fname" />
+		<xs:element ref="lname" />
+		<xs:element name="ssn" type="ssnType" />
+		<xs:element name="dob" type="dobType" />
+	</xs:sequence>
+	<xs:attribute name="deptID" type="xs:positiveInteger" use="required" />
+	<xs:attribute name="empID" type="xs:positiveInteger" use="required" />
+</xs:complexType>
+
+<xs:complexType name="employeesType">
+	<xs:sequence>
+		<xs:element name="employee" type="employeeType" maxOccurs="unbounded" />
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="companyType">
+	<xs:sequence>
+		<xs:element name="departments" type="departmentsType" />
+		<xs:element name="employees" type="employeesType" />
+	</xs:sequence>
+	<xs:attribute name="name" type="xs:string" use="required" />
+</xs:complexType>
+
+<xs:element name="company" type="companyType" />
+
+</xs:schema>
