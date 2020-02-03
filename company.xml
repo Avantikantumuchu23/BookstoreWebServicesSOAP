@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE company SYSTEM "company.dtd">
+
+<company name="IBM">
+	<departments>
+		
+		<department id="1">
+			<name>Sales</name>
+			<boss empID="1" />
+		</department>
+		
+		<department id="2">
+			<name>Accounting</name>
+			<boss empID="2" />
+		</department>
+		
+		<department id="3">
+			<name>IT</name>
+			<boss empID="3" />
+		</department>
+	
+	</departments>
+	
+	<employees>
+	
+		<employee deptID="1" empID="1">
+			<fname>Fname1</fname>
+			<lname>Lname1</lname>
+			<ssn>111-11-1111</ssn>
+			<dob>
+				<month>1</month>
+				<day>1</day>
+				<year>1981</year>
+			</dob>	
+		</employee>
+		
+		<employee deptID="2" empID="2">
+			<fname>Fname2</fname>
+			<lname>Lname2</lname>
+			<ssn>222-22-2222</ssn>
+			<dob>
+				<month>2</month>
+				<day>2</day>
+				<year>1982</year>
+			</dob>	
+		</employee>
+		
+		<employee deptID="3" empID="3">
+			<fname>Fname3</fname>
+			<lname>Lname3</lname>
+			<ssn>333-33-3333</ssn>
+			<dob>
+				<month>3</month>
+				<day>3</day>
+				<year>1983</year>
+			</dob>	
+		</employee>
+	
+	
+	
+	
+	</employees>
+
+	
+	
+	
+	
+	
+	
+	
+
+</company>

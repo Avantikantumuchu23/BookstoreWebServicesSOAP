@@ -1,0 +1,57 @@
+<!ELEMENT company (departments,employees)>
+<!ATTLIST company name CDATA #REQUIRED>
+
+
+<!ELEMENT departments (department+)>
+<!ELEMENT employees (employee+)>
+
+<!ELEMENT department (name,boss)>
+<!ATTLIST department id CDATA #REQUIRED>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT boss EMPTY>
+<!ATTLIST boss empID CDATA #REQUIRED>
+
+
+<!ELEMENT employee (fname,lname,ssn,dob)>
+
+<!ATTLIST employee 
+deptID CDATA #REQUIRED
+empID CDATA #REQUIRED
+>
+
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT ssn (#PCDATA)>
+
+<!ELEMENT dob (month,day,year)>
+
+<!ELEMENT month (#PCDATA)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
